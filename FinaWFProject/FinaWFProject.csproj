@@ -58,6 +58,7 @@
     <Compile Include="AttendanceForm.Designer.cs">
       <DependentUpon>AttendanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EMPLOYEE.cs" />
     <Compile Include="EmployeeDashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
