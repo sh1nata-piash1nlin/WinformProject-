@@ -1,6 +1,6 @@
 ﻿namespace FinaWFProject
 {
-    partial class Form1
+    partial class AdminDashboardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,4 +37,3 @@
         #endregion
     }
 }
-
