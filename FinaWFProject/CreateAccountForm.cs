@@ -44,8 +44,8 @@ namespace FinaWFProject
             }
 
             // Email hệ thống gửi mã xác nhận
-            string from = "baocongthu@gmail.com";
-            string pass = "psenbkvgjksjyoyc";
+            string from = "tri14102004@gmail.com";
+            string pass = "pozk brni qezo qpoo";
 
             if (string.IsNullOrWhiteSpace(from) || string.IsNullOrWhiteSpace(pass))
             {
@@ -159,11 +159,11 @@ namespace FinaWFProject
                 return false;
             }
 
-            if ((DateTime.Now - codeSentTime).TotalMinutes > 5)
-            {
-                MessageBox.Show("Mã xác nhận đã hết hạn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //if ((DateTime.Now - codeSentTime).TotalMinutes > 500)
+            //{
+            //    MessageBox.Show("Mã xác nhận đã hết hạn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
 
             if (codeTextBox.Text.Trim() == "")
             {

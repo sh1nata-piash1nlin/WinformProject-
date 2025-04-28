@@ -10,7 +10,7 @@ namespace FinaWFProject
 {
     internal class MY_DB
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=QLSVDB;Integrated Security=True;Connect Timeout=30;");
+        SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=QLNH;Integrated Security=True;Connect Timeout=30;");
         // get the connection
         public SqlConnection getConnection
         {
