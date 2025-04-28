@@ -93,6 +93,8 @@ namespace FinaWFProject
             int userid = Convert.ToInt32(idTextBox.Text);
             string username = usernameTextBox.Text.Trim();
             string password = passwordTextBox.Text.Trim();
+            string role = roleComboBox.SelectedItem.ToString();  // Get selected role from ComboBox
+
             if (!int.TryParse(idTextBox.Text.Trim(), out userid))
             {
                 MessageBox.Show("ID phải là số nguyên hợp lệ", "Lỗi",
@@ -131,7 +133,7 @@ namespace FinaWFProject
                 return;
             }
 
-            if (user.insertUser(userid, username, password))
+            if (user.insertUser(userid, username, password, role))
             {
                 MessageBox.Show("User đăng ký thành công!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -235,7 +237,10 @@ namespace FinaWFProject
 
         private void CreateAccountForm_Load(object sender, EventArgs e)
         {
-
+            roleComboBox.Items.Add("Employee");
+            roleComboBox.Items.Add("Admin");
+            roleComboBox.Items.Add("Customer"); 
+            roleComboBox.SelectedIndex = 0;  // Default to "Employee"
         }
     }
 }

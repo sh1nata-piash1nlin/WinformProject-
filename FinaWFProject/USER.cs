@@ -25,23 +25,24 @@ namespace FinaWFProject
         }
 
         // Function to add a new user
-        public bool insertUser(int userid, string username, string password)
+        public bool insertUser(int userid, string username, string password, string role)
         {
-            string defaultRole = "Nhân viên"; // Role mặc định
+            // Fix: Ensure that @role is declared only once in the SQL query
+            SqlCommand cmd = new SqlCommand("INSERT INTO Users (UserID, Username, Password, Role) VALUES (@UserID, @Username, @Password, @Role)", mydb.getConnection);
 
-            SqlCommand command = new SqlCommand("INSERT INTO Users (UserID, Username, Password, Role) VALUES (@id, @usr, @pwd, @role)", mydb.getConnection);
-
-            command.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = userid;
-            command.Parameters.Add("@usr", System.Data.SqlDbType.NVarChar, 50).Value = username;
-            command.Parameters.Add("@pwd", System.Data.SqlDbType.NVarChar, 255).Value = HashPassword(password);
-            command.Parameters.Add("@role", System.Data.SqlDbType.NVarChar, 20).Value = defaultRole;
+            // Ensure parameters are correctly added
+            cmd.Parameters.AddWithValue("@UserID", userid);
+            cmd.Parameters.AddWithValue("@Username", username);
+            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@Role", role);
 
             mydb.openConnection();
-            bool success = command.ExecuteNonQuery() == 1;
+            int result = cmd.ExecuteNonQuery();
             mydb.closeConnection();
 
-            return success;
+            return result > 0; // Returns true if insertion was successful
         }
+
 
 
         // Function to check login credentials

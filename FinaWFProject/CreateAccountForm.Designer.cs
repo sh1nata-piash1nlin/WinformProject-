@@ -47,6 +47,8 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
             this.sendcodeTimer = new System.Windows.Forms.Timer(this.components);
+            this.roleComboBox = new System.Windows.Forms.ComboBox();
+            this.selectRoleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // createaccountLabel
@@ -92,7 +94,7 @@
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(179, 220);
+            this.idLabel.Location = new System.Drawing.Point(97, 227);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(23, 16);
             this.idLabel.TabIndex = 4;
@@ -102,7 +104,7 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(179, 260);
+            this.usernameLabel.Location = new System.Drawing.Point(97, 267);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(73, 16);
             this.usernameLabel.TabIndex = 5;
@@ -111,7 +113,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(179, 298);
+            this.passwordLabel.Location = new System.Drawing.Point(97, 305);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(70, 16);
             this.passwordLabel.TabIndex = 6;
@@ -120,7 +122,7 @@
             // repasswordLabel
             // 
             this.repasswordLabel.AutoSize = true;
-            this.repasswordLabel.Location = new System.Drawing.Point(179, 337);
+            this.repasswordLabel.Location = new System.Drawing.Point(97, 344);
             this.repasswordLabel.Name = "repasswordLabel";
             this.repasswordLabel.Size = new System.Drawing.Size(92, 16);
             this.repasswordLabel.TabIndex = 7;
@@ -145,29 +147,31 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(282, 214);
+            this.idTextBox.Location = new System.Drawing.Point(200, 221);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(173, 22);
             this.idTextBox.TabIndex = 10;
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(282, 254);
+            this.usernameTextBox.Location = new System.Drawing.Point(200, 261);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(173, 22);
             this.usernameTextBox.TabIndex = 11;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(282, 292);
+            this.passwordTextBox.Location = new System.Drawing.Point(200, 299);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(173, 22);
             this.passwordTextBox.TabIndex = 12;
             // 
             // repasswordTextBox
             // 
-            this.repasswordTextBox.Location = new System.Drawing.Point(282, 331);
+            this.repasswordTextBox.Location = new System.Drawing.Point(200, 338);
             this.repasswordTextBox.Name = "repasswordTextBox";
+            this.repasswordTextBox.PasswordChar = '*';
             this.repasswordTextBox.Size = new System.Drawing.Size(173, 22);
             this.repasswordTextBox.TabIndex = 13;
             // 
@@ -210,12 +214,32 @@
             this.createButton.UseVisualStyleBackColor = false;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
+            // roleComboBox
+            // 
+            this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Location = new System.Drawing.Point(490, 261);
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Size = new System.Drawing.Size(129, 24);
+            this.roleComboBox.TabIndex = 17;
+            // 
+            // selectRoleLabel
+            // 
+            this.selectRoleLabel.AutoSize = true;
+            this.selectRoleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectRoleLabel.Location = new System.Drawing.Point(505, 238);
+            this.selectRoleLabel.Name = "selectRoleLabel";
+            this.selectRoleLabel.Size = new System.Drawing.Size(106, 20);
+            this.selectRoleLabel.TabIndex = 18;
+            this.selectRoleLabel.Text = "Select Role";
+            // 
             // CreateAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(700, 486);
+            this.Controls.Add(this.selectRoleLabel);
+            this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.sendcodeButton);
@@ -235,6 +259,7 @@
             this.Controls.Add(this.createaccountLabel);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "CreateAccountForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreatAccountForm";
             this.Load += new System.EventHandler(this.CreateAccountForm_Load);
             this.ResumeLayout(false);
@@ -262,5 +287,7 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Timer sendcodeTimer;
+        private System.Windows.Forms.ComboBox roleComboBox;
+        private System.Windows.Forms.Label selectRoleLabel;
     }
 }
